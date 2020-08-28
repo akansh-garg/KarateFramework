@@ -10,3 +10,13 @@ And print response
 * def expectedOutput = read('classpath:jsonfiles/singleuser.json')
 And match response == expectedOutput
 And match response.data.id == 2
+# in this step, We are validating whole response except one field called lastname because it is mentioned #ignore in json file
+* def expectedOutputIgnore = read('classpath:jsonfiles/singleuserwithignorevalue.json')
+And match response == expectedOutputIgnore
+And print expectedOutputIgnore
+# below step shows how to check specific field is present in response inrespective of their value 
+And match response.data.first_name != null
+# below step shows how to check specific field is present in response inrespective of their value
+# note:  if we directly compare with null without storing it in variable then test scenario will fail
+* def first_name1 = response.data.first_name1
+And match first_name1 == null
