@@ -18,7 +18,7 @@ import com.karate.utils.TestUtils;
  * @author AKANSH
  * It is normal junit class we should not use @RunWith to execute feature files in parallel
  */
-@KarateOptions(features = "classpath:featurefiles/parallelexecutiondemo")
+@KarateOptions(features = "classpath:featurefiles/parallelexecutiondemo", tags = "~@ignore")
 public class TestParallelRunner {
 
 	@BeforeClass
