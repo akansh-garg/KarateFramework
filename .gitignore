@@ -2,3 +2,4 @@ target/*
 .settings/*
 Reporting/*
 
+/target/
